@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and run Java",
+            "type": "shell",
+            "command": "javac \"${file}\" && java -cp \"${fileDirname}\" ${fileBasenameNoExtension} < input.txt > output.txt",
+            "options": {
+                "cwd": "${fileDirname}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "presentation": {
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "java",
+                "fileLocation": ["relative", "${fileDirname}"],
+                "pattern": {
+                    "regexp": "^(.*\\.java):(\\d+):\\s+(error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "severity": 3,
+                    "message": 4
+                }
+            }
+        }
+    ]
+}
