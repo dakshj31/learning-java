@@ -5,5 +5,7 @@ public class input {
         int num = sc.nextInt();
         System.out.println(num);
 
+        sc.close();
+
     }
 }
